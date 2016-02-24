@@ -9,21 +9,21 @@ package iteration1;
  *
  * @author jakedotts
  */
-public class Level {
+public class Level1 extends LevelSuper{
     
-    public Level(){
-        
+    private int levelTraverse;
+    
+    public Level1(boolean decision){
+        decision = super.getPlayerDecision();
     }
     public void endGame(){
-        //System.exit(0);
+        System.exit(0);
     }
     public void backgroundImage(){
         
     }
-    public boolean getPlayerDecision(){
-        return true;
-    }
     public int getLevel(){
+        //levelTraverse
         return 1;
     }
 }
