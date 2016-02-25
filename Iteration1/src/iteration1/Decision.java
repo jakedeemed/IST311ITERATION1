@@ -14,9 +14,9 @@ import javax.swing.JTextField;
 
 public abstract class Decision implements ActionListener{ 
     JButton DecisionOne = new JButton("");
-    JButton Decision2;
-    JButton Decision3;
-    JButton Decision4;
+    JButton DecisionTwo;
+    JButton DecisionThree;
+    JButton DecisionFour;
     
     public Decision(){
       DecisionOne.addActionListener(new ActionListener(){
@@ -30,10 +30,29 @@ public abstract class Decision implements ActionListener{
           JTextField d = new JTextField("YOU LOSE!");
          }
      });
-      
+     
+       DecisionThree.addActionListener(new ActionListener(){
+       public void actionPerformed(ActionEvent e){
+          JTextField d = new JTextField("YOU LOSE!");
+         }
+     });
+       
+        DecisionFour.addActionListener(new ActionListener(){
+       public void actionPerformed(ActionEvent e){
+          JTextField d = new JTextField("");
+         }
+     });
       
      }
 
+    public void setButtons(JButton a, JButton b, JButton c,JButton d){
+        DecisionOne = a;
+        DecisionTwo =b; 
+        DecisionThree =c;
+        DecisionFour = d;
+                
+                }
+    
      
 }
     
