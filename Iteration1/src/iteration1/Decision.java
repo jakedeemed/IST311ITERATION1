@@ -51,8 +51,8 @@ public abstract class Decision implements ActionListener{
         DecisionThree =c;
         DecisionFour = d;
                 
-                }
-    
+    }
+
      
 }
     

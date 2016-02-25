@@ -20,6 +20,7 @@ public class LevelSuper {
     
     private int levelNumber;
     private Panel game = new Panel();
+    private static String levelDescription;
     
     public void endGame(){
         System.exit(0);

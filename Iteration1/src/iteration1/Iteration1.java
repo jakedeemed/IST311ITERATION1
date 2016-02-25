@@ -17,9 +17,9 @@ public class Iteration1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("asdfasd");
         
         Panel frame = new Panel();
+        
         
         frame.setSize(400,400);
         frame.setTitle("Decisions");

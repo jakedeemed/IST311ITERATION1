@@ -12,6 +12,7 @@ package iteration1;
 public class Level1 extends LevelSuper{
     
     private int levelTraverse;
+    private static String levelDescription = "IT IS DARK, YOU ARE LIKELY TO BE EATEN BY A GRUE";
     
     public Level1(boolean decision){
         decision = super.getPlayerDecision();
@@ -25,5 +26,8 @@ public class Level1 extends LevelSuper{
     public int getLevel(){
         //levelTraverse
         return 1;
+    }
+    public static String getLevelDescription(){
+        return Level1.levelDescription;
     }
 }
