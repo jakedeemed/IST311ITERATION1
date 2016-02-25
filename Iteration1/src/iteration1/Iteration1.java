@@ -5,6 +5,8 @@
  */
 package iteration1;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author jakedotts
@@ -16,6 +18,17 @@ public class Iteration1 {
      */
     public static void main(String[] args) {
         System.out.println("asdfasd");
+        
+        Panel frame = new Panel();
+        
+        frame.setSize(400,400);
+        frame.setTitle("Decisions");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        
+       
+        
+        
     }
     
 }

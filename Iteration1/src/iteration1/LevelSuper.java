@@ -19,7 +19,7 @@ import javax.swing.JLabel;
 public class LevelSuper {
     
     private int levelNumber;
-    private GameUI game = new GameUI();
+    private Panel game = new Panel();
     
     public void endGame(){
         System.exit(0);
