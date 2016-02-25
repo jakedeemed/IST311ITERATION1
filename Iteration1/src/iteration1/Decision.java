@@ -6,65 +6,36 @@
 package iteration1;
 
 
-
-import java.awt.Button;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 
-/**
- *
- * @author Edgar
- */
-public class Decision extends DecisionsSuperClass{
-    //Option Buttons
-    String teddyBear = "Teddy Bear!";                   String run = "Run!";
-    String windowJump = "Jump out the window!";         String fightZoombie = "Fight the Zoombie!";
+
+public abstract class Decision implements ActionListener{ 
+    JButton DecisionOne = new JButton("");
+    JButton Decision2;
+    JButton Decision3;
+    JButton Decision4;
     
     public Decision(){
-        
-    }
-    
-    //Sends Player Options to the Level Class
-    public String getPlayerOptions(){
-       return teddyBear + windowJump + run + fightZoombie;
-    }
-    
-    public String getPlayerDecision(){
-        return "";
-    }
-    
-    public void setPlayerOptions(Button DecisionOne,String tb, String wj, String r, String fz){
-       this.teddyBear = tb;
-       windowJump = wj;
-       run = r;
-       fightZoombie = fz;
-       
-       
-    }
-    
-       
-  //  public void setPlayerDecisions(){
-            
-   // }
-    
-    public void setResult(){
-    
-    }
+      DecisionOne.addActionListener(new ActionListener(){
+       public void actionPerformed(ActionEvent e){
+          JTextField d = new JTextField("YOU LOSE!");
+         }
+     });
+      
+      DecisionTwo.addActionListener(new ActionListener(){
+       public void actionPerformed(ActionEvent e){
+          JTextField d = new JTextField("YOU LOSE!");
+         }
+     });
+      
+      
+     }
 
-    boolean setPlayerOptions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     
 }
+    
+    
+    
