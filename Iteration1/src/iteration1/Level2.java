@@ -31,7 +31,7 @@ public class Level2 extends LevelSuper{
         return 1;
     }
     public static String getLevelDescription(){
-        String levelDescription = "IT IS DARK, YOU ARE LIKELY TO BE EATEN BY A GRUE";
+        String levelDescription = "YOU HEAR SHATTERED GLASS, AROUND THE CORNER COMES A BEAR";
         return levelDescription;
     }
     public String getD1(){
@@ -56,16 +56,16 @@ public class Level2 extends LevelSuper{
         return newDecision4;
     }
     public String getButton1(){
-        return "Umbrella";
+        return "Knife";
     }
     public String getButton2(){
-        return "Teddy Bear";
+        return "Window";
     }    
     public String getButton3(){
-        return "Window";
+        return "Run";
     }
     public String getButton4(){
-        return "Fight";
+        return "Cat";
     }    
     /*
     choice1 = new JButton("Umbrella");

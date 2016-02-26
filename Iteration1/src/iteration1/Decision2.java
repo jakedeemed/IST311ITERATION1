@@ -17,9 +17,7 @@ import javax.swing.*;
 public class Decision2 extends JPanel implements ActionListener{
     private JTextArea j, level;
     private JButton choice1, choice2, choice3, choice4;
-    //Decision decision;
-    static String text = Level1.getLevelDescription();
-    private GameUI game = new GameUI();
+    static String text = Level2.getLevelDescription();
 
     
     public Decision2(){
@@ -61,9 +59,8 @@ public class Decision2 extends JPanel implements ActionListener{
         }
         else if(obj.equals(choice2)){
             j.setText(two.getD2()); 
-            this.setBackground(Color.green);
-            JOptionPane.showMessageDialog(null, "you made the right decision");
-            game.repaint();
+            this.setBackground(Color.red);
+            
         }
         else if(obj.equals(choice3)){
             j.setText(two.getD3());  
@@ -71,18 +68,12 @@ public class Decision2 extends JPanel implements ActionListener{
         }
         else if(obj.equals(choice4)){
             j.setText(two.getD4());
-            this.setBackground(Color.red);
+            this.setBackground(Color.green);
+            JOptionPane.showMessageDialog(null, "YOU WON THE GAME");
+            System.exit(0);
         }
     }
-    public void winningBackgroundColor(){
-        Decision2 pan = new Decision2();
-        pan.setBackground(Color.green);
-    }
-    public void loosingBackgroundColor(){
-        Decision2 pan = new Decision2();
-        pan.setBackground(Color.red);
-    }
-   
+
   
     
     
