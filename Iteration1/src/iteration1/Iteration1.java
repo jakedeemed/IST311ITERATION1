@@ -19,7 +19,7 @@ public class Iteration1 {
     public static void main(String[] args) 
     {
         
-        Frame frame1 = new Frame();
+        GameUI frame1 = new GameUI();
         
 
            

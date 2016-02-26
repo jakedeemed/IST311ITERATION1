@@ -38,12 +38,12 @@ public class DecisionTest {
     }
 
     /**
-     * Test of getPlayerOptions method, of class Decision.
+     * Test of getPlayerOptions method, of class Decision1.
      */
     @Test
     public void testGetPlayerOptions() {
         System.out.println("getPlayerOptions");
-        Decision instance = new Decision();
+        Decision1 instance = new Decision1();
         String expResult = "";
         String result = instance.getPlayerOptions();
         assertEquals(expResult, result);
@@ -52,12 +52,12 @@ public class DecisionTest {
     }
 
     /**
-     * Test of getPlayerDecision method, of class Decision.
+     * Test of getPlayerDecision method, of class Decision1.
      */
     @Test
     public void testGetPlayerDecision() {
         System.out.println("getPlayerDecision");
-        Decision instance = new Decision();
+        Decision1 instance = new Decision1();
         String expResult = "";
         String result = instance.getPlayerDecision();
         assertEquals(expResult, result);
@@ -66,12 +66,12 @@ public class DecisionTest {
     }
 
     /**
-     * Test of setPlayerOptions method, of class Decision.
+     * Test of setPlayerOptions method, of class Decision1.
      */
     @Test
     public void testSetPlayerOptions() {
         System.out.println("setPlayerOptions");
-        Decision instance = new Decision();
+        Decision1 instance = new Decision1();
         boolean expResult = false;
         boolean result = instance.setPlayerOptions();
         assertEquals(expResult, result);
@@ -80,12 +80,12 @@ public class DecisionTest {
     }
 
     /**
-     * Test of setPlayerDecisions method, of class Decision.
+     * Test of setPlayerDecisions method, of class Decision1.
      */
     @Test
     public void testSetPlayerDecisions() {
         System.out.println("setPlayerDecisions");
-        Decision instance = new Decision();
+        Decision1 instance = new Decision1();
         boolean expResult = false;
     //    boolean result = instance.setPlayerDecisions();
         //assertEquals(expResult, result);
@@ -94,12 +94,12 @@ public class DecisionTest {
     }
 
     /**
-     * Test of setResult method, of class Decision.
+     * Test of setResult method, of class Decision1.
      */
     @Test
     public void testSetResult() {
         System.out.println("setResult");
-        Decision instance = new Decision();
+        Decision1 instance = new Decision1();
         instance.setResult();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

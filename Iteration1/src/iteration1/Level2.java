@@ -11,11 +11,11 @@ import javax.swing.JOptionPane;
  *
  * @author jakedotts
  */
-public class Level1 extends LevelSuper{
+public class Level2 extends LevelSuper{
     
     
     private int levelTraverse;
-    public Level1(){
+    public Level2(){
         
     }
     
