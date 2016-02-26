@@ -52,25 +52,25 @@ public class Decision2 extends JPanel implements ActionListener{
     
     public void actionPerformed(ActionEvent evt)
     {
-        Level1 one = new Level1();
+        Level2 two = new Level2();
         
         Object obj = evt.getSource();
         if(obj.equals(choice1)){
-            j.setText(one.getD1()); 
+            j.setText(two.getD1()); 
             this.setBackground(Color.red);
         }
         else if(obj.equals(choice2)){
-            j.setText(one.getD2()); 
+            j.setText(two.getD2()); 
             this.setBackground(Color.green);
             JOptionPane.showMessageDialog(null, "you made the right decision");
             game.repaint();
         }
         else if(obj.equals(choice3)){
-            j.setText(one.getD3());  
+            j.setText(two.getD3());  
             this.setBackground(Color.red);
         }
         else if(obj.equals(choice4)){
-            j.setText(one.getD4());
+            j.setText(two.getD4());
             this.setBackground(Color.red);
         }
     }

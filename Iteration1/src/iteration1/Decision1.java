@@ -76,7 +76,7 @@ public class Decision1 extends JPanel implements ActionListener{
         
         if(evt.getSource().equals(choice2)){
             Level2 nextLevel = new Level2();
-            game.repaint();
+            game.repaintLevel2();
         }
     }
     
