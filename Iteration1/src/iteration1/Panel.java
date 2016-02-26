@@ -19,18 +19,20 @@ public class Panel extends JPanel implements ActionListener{
     Decision decision;
     static String text = Level1.getLevelDescription();
     
+    public Panel(){
+        
+    }
 
-
-    public Panel()
+    public Panel(String one, String two, String three, String four)
     {
     
-        choice1 = new JButton("Umbrella");
+        choice1 = new JButton(one);
         this.add(choice1);
-        choice2 = new JButton("Teddy Bear");
+        choice2 = new JButton(two);
         this.add(choice2);
-        choice3 = new JButton("Window");
+        choice3 = new JButton(three);
         this.add(choice3);
-        choice4 = new JButton("Fight");
+        choice4 = new JButton(four);
         this.add(choice4);        
         j = new JTextField();
         j.setText(text);
@@ -45,28 +47,20 @@ public class Panel extends JPanel implements ActionListener{
     
     public void actionPerformed(ActionEvent evt)
     {
+        Level1 one = new Level1();
+        
         Object obj = evt.getSource();
-        if(obj == choice1)
-        {
-            j.setText("You reach for your nearby umbrella and try to fend off the zombie. The zombie snaps the umbrella into pieces.");
-            
+        if(obj.equals(choice1)){
+            j.setText(one.getD1());      
         }
-        
-        if(obj == choice2)
-        {
-            j.setText("The zombie gracefully accepts your teddy bear and exits through the window");
-            
+        else if(obj.equals(choice2)){
+            j.setText(one.getD2());  
         }
-        
-        if(obj == choice3)
-        {
-            j.setText("You try to jump out of the window and the zombie grabs your legs and pulls you back into your bedroom.");
-            
+        else if(obj.equals(choice3)){
+            j.setText(one.getD3());    
         }
-        
-        if(obj == choice4)
-        {
-            j.setText("You attempt to fight the zombie and you lose the fight. Good try");
+        else if(obj.equals(choice4)){
+            j.setText(one.getD4());
         }
     }
    

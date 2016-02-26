@@ -19,7 +19,7 @@ import javax.swing.JLabel;
 public class LevelSuper {
     
     private int levelNumber;
-    private Panel game = new Panel();
+    //private Panel game = new Panel();
     private static String levelDescription;
     
     public void endGame(){
@@ -31,7 +31,7 @@ public class LevelSuper {
     public void setBackgroundImage(String fileName) throws IOException{
         BufferedImage myPicture = ImageIO.read(new File(fileName));
             JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-            game.add(picLabel);
+            //game.add(picLabel);
     }
     public boolean getPlayerDecision(){
         return false;
