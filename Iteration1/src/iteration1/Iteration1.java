@@ -16,15 +16,11 @@ public class Iteration1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         
-        Panel frame = new Panel();
-        
-        
-        frame.setSize(400,400);
-        frame.setTitle("Decisions");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        Frame frame1 = new Frame();
+        frame1.setSize(600,600);
         
        
         
