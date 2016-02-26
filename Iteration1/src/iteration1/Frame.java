@@ -17,17 +17,21 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-public class Frame extends JFrame 
-{
+public class Frame extends JFrame {
+    Level1 Level1 = new Level1();
+    private String one = Level1.getButton1();
+    private String two = Level1.getButton2();
+    private String three = Level1.getButton3();
+    private String four = Level1.getButton4();
     public Frame()
     {
-       Panel panel1 = new Panel();
+       Panel panel1 = new Panel(one,two,three,four);
     
      getContentPane().add(panel1, BorderLayout.CENTER);
         
     
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(600,600);
+        setSize(650,650);
         setVisible(true);
         
     }

@@ -20,11 +20,9 @@ public class Iteration1 {
     {
         
         Frame frame1 = new Frame();
-        frame1.setSize(600,600);
         
-       
-        
-        
+
+           
     }
     
 }

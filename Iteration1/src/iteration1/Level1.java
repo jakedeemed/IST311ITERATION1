@@ -11,6 +11,7 @@ package iteration1;
  */
 public class Level1 extends LevelSuper{
     
+    
     private int levelTraverse;
     public Level1(){
         
@@ -52,7 +53,18 @@ public class Level1 extends LevelSuper{
                 + "the fight. Good try";
         return newDecision4;
     }
-    
+    public String getButton1(){
+        return "Umbrella";
+    }
+    public String getButton2(){
+        return "Teddy Bear";
+    }    
+    public String getButton3(){
+        return "Window";
+    }
+    public String getButton4(){
+        return "Fight";
+    }    
     /*
     choice1 = new JButton("Umbrella");
         this.add(choice1);

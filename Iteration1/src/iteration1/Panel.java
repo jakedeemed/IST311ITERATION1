@@ -14,10 +14,11 @@ import javax.swing.*;
  * @author Maxwell Kosabutski
  */
 public class Panel extends JPanel implements ActionListener{
-    private JTextField j;
+    private JTextArea j;
     private JButton choice1, choice2, choice3, choice4;
     Decision decision;
     static String text = Level1.getLevelDescription();
+
     
     public Panel(){
         
@@ -25,7 +26,6 @@ public class Panel extends JPanel implements ActionListener{
 
     public Panel(String one, String two, String three, String four)
     {
-    
         choice1 = new JButton(one);
         this.add(choice1);
         choice2 = new JButton(two);
@@ -34,9 +34,9 @@ public class Panel extends JPanel implements ActionListener{
         this.add(choice3);
         choice4 = new JButton(four);
         this.add(choice4);        
-        j = new JTextField();
+        j = new JTextArea();
         j.setText(text);
-        j.setEditable(true);
+        j.setEditable(false);
         this.add(j);
         
         choice1.addActionListener(this);
