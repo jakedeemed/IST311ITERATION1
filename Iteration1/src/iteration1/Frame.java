@@ -25,7 +25,7 @@ public class Frame extends JFrame {
     private String four = Level1.getButton4();
     public Frame()
     {
-       Panel panel1 = new Panel(one,two,three,four);
+       Decision panel1 = new Decision(one,two,three,four);
     
      getContentPane().add(panel1, BorderLayout.CENTER);
         

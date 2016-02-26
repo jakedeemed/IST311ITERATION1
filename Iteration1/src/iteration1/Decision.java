@@ -5,56 +5,78 @@
  */
 package iteration1;
 
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.*;
+import javax.swing.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JTextField;
+/**
+ *
+ * @author Maxwell Kosabutski
+ */
+public class Decision extends JPanel implements ActionListener{
+    private JTextArea j;
+    private JButton choice1, choice2, choice3, choice4;
+    //Decision decision;
+    static String text = Level1.getLevelDescription();
 
-
-public abstract class Decision implements ActionListener{ 
-    JButton DecisionOne = new JButton("");
-    JButton DecisionTwo;
-    JButton DecisionThree;
-    JButton DecisionFour;
     
     public Decision(){
-      DecisionOne.addActionListener(new ActionListener(){
-       public void actionPerformed(ActionEvent e){
-          JTextField d = new JTextField("YOU LOSE!");
-         }
-     });
-      
-      DecisionTwo.addActionListener(new ActionListener(){
-       public void actionPerformed(ActionEvent e){
-          JTextField d = new JTextField("YOU LOSE!");
-         }
-     });
-     
-       DecisionThree.addActionListener(new ActionListener(){
-       public void actionPerformed(ActionEvent e){
-          JTextField d = new JTextField("YOU LOSE!");
-         }
-     });
-       
-        DecisionFour.addActionListener(new ActionListener(){
-       public void actionPerformed(ActionEvent e){
-          JTextField d = new JTextField("");
-         }
-     });
-      
-     }
-
-    public void setButtons(JButton a, JButton b, JButton c,JButton d){
-        DecisionOne = a;
-        DecisionTwo =b; 
-        DecisionThree =c;
-        DecisionFour = d;
-                
+        
     }
 
-     
+    public Decision(String one, String two, String three, String four)
+    {
+        choice1 = new JButton(one);
+        this.add(choice1);
+        choice2 = new JButton(two);
+        this.add(choice2);
+        choice3 = new JButton(three);
+        this.add(choice3);
+        choice4 = new JButton(four);
+        this.add(choice4);        
+        j = new JTextArea();
+        j.setText(text);
+        j.setEditable(false);
+        this.add(j);
+        
+        choice1.addActionListener(this);
+        choice2.addActionListener(this);
+        choice3.addActionListener(this);
+        choice4.addActionListener(this);
+    }  
+    
+    public void actionPerformed(ActionEvent evt)
+    {
+        Level1 one = new Level1();
+        
+        Object obj = evt.getSource();
+        if(obj.equals(choice1)){
+            j.setText(one.getD1());      
+        }
+        else if(obj.equals(choice2)){
+            j.setText(one.getD2());  
+        }
+        else if(obj.equals(choice3)){
+            j.setText(one.getD3());    
+        }
+        else if(obj.equals(choice4)){
+            j.setText(one.getD4());
+        }
+    }
+    public void winningBackgroundColor(){
+        Decision pan = new Decision();
+        pan.setBackground(Color.green);
+    }
+    public void loosingBackgroundColor(){
+        Decision pan = new Decision();
+        pan.setBackground(Color.red);
+    }
+   
+  
+    
+    
+   
+    
+    
 }
-    
-    
-    
