@@ -31,13 +31,15 @@ public class Level1 extends LevelSuper{
         return 1;
     }
     public static String getLevelDescription(){
-        String levelDescription = "IT IS DARK, YOU ARE LIKELY TO BE EATEN BY A GRUE";
+        String levelDescription = "It is late at night, you are laying in bed. You then hear a knock on the door and start to wonder who is visiting so late. "
+                + "You then hear the door slam open and footsteps running up the staircase."
+                + "All of a sudden a zombie busts through your bedroom door. What do you do?";
         return levelDescription;
     }
     public String getD1(){
         String newDecision1 = "You reach for your nearby "
                 + "umbrella and try to fend off the zombie. "
-                + "The zombie snaps the umbrella into pieces.";
+                + "The zombie snaps the umbrella into pieces. Try again.";
         return newDecision1;
     }
     public String getD2(){
@@ -47,12 +49,12 @@ public class Level1 extends LevelSuper{
     }
     public String getD3(){
         String newDecision3 = "You try to jump out of the window and the zombie "
-                + "grabs your legs and pulls you back into your bedroom";
+                + "grabs your legs and pulls you back into your bedroom. Try again.";
         return newDecision3;
     }
     public String getD4(){
         String newDecision4 = "You attempt to fight the zombie and you lose "
-                + "the fight. Good try";
+                + "the fight. Good try.";
         return newDecision4;
     }
     public String getButton1(){

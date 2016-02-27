@@ -57,20 +57,26 @@ public class Decision1 extends JPanel implements ActionListener{
         if(obj.equals(choice1)){
             j.setText(one.getD1()); 
             this.setBackground(Color.red);
+            remove(choice1);
         }
         else if(obj.equals(choice2)){
             j.setText(one.getD2()); 
             this.setBackground(Color.green);
+            remove(choice1);
+            remove(choice3);
+            remove(choice4);
             JOptionPane.showMessageDialog(null, "you made the right decision");
             //game.repaintLevel2();
         }
         else if(obj.equals(choice3)){
             j.setText(one.getD3());  
             this.setBackground(Color.red);
+            remove(choice3);
         }
         else if(obj.equals(choice4)){
             j.setText(one.getD4());
             this.setBackground(Color.red);
+            remove(choice4);
         }
         
         if(evt.getSource().equals(choice2)){

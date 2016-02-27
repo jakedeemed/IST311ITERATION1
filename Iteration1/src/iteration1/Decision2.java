@@ -56,19 +56,26 @@ public class Decision2 extends JPanel implements ActionListener{
         if(obj.equals(choice1)){
             j.setText(two.getD1()); 
             this.setBackground(Color.red);
+            remove(choice1);
+            
         }
         else if(obj.equals(choice2)){
             j.setText(two.getD2()); 
             this.setBackground(Color.red);
+            remove(choice2);
             
         }
         else if(obj.equals(choice3)){
             j.setText(two.getD3());  
             this.setBackground(Color.red);
+            remove(choice3);
         }
         else if(obj.equals(choice4)){
             j.setText(two.getD4());
             this.setBackground(Color.green);
+            remove(choice1);
+            remove(choice2);
+            remove(choice3);
             JOptionPane.showMessageDialog(null, "YOU WON THE GAME");
             System.exit(0);
         }

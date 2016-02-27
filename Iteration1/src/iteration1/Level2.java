@@ -31,35 +31,35 @@ public class Level2 extends LevelSuper{
         return 1;
     }
     public static String getLevelDescription(){
-        String levelDescription = "YOU HEAR SHATTERED GLASS, AROUND THE CORNER COMES A BEAR";
+        String levelDescription = "YOU HEAR SHATTERED GLASS, AROUND THE CORNER COMES A BEAR. What will you do?";
         return levelDescription;
     }
     public String getD1(){
-        String newDecision1 = "You reach for your nearby "
-                + "umbrella and try to fend off the zombie. "
-                + "The zombie snaps the umbrella into pieces.";
+        String newDecision1 = "You reach for a knife and the bear "
+                + "grabs the knife with his mouth and throws "
+                + "it across the room leaving you helpless. Try again.";
         return newDecision1;
     }
     public String getD2(){
-        String newDecision2 = "The zombie gracefully accepts your "
-                + "teddy bear and exits through the window";
+        String newDecision2 = "You grab your hunting rifle and try to shoot the bear. "
+                + "You then quickly realize that the gun is not loaded. Try again.";
         return newDecision2;
     }
     public String getD3(){
-        String newDecision3 = "You try to jump out of the window and the zombie "
-                + "grabs your legs and pulls you back into your bedroom";
+        String newDecision3 = "You try to run out of the room but little did you know "
+                + "there is a pack of bears waiting for you outside of the house. Try again.";
         return newDecision3;
     }
     public String getD4(){
-        String newDecision4 = "You attempt to fight the zombie and you lose "
-                + "the fight. Good try";
+        String newDecision4 = "You run and pick up your cat. You show the cat to the bear "
+                + "and the bear gives a hug to the cat and then leaves your room.";
         return newDecision4;
     }
     public String getButton1(){
         return "Knife";
     }
     public String getButton2(){
-        return "Window";
+        return "Rifle";
     }    
     public String getButton3(){
         return "Run";
