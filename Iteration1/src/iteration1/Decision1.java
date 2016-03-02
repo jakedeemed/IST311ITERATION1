@@ -6,7 +6,6 @@
 package iteration1;
 
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.event.*;
 import javax.swing.*;
 

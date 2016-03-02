@@ -19,25 +19,7 @@ import static org.junit.Assert.*;
  */
 public class Decision1Test {
     
-    public Decision1Test() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
+   
     /**
      * Test of actionPerformed method, of class Decision1.
      */
@@ -46,9 +28,9 @@ public class Decision1Test {
         System.out.println("actionPerformed");
         ActionEvent evt = null;
         Decision1 instance = new Decision1();
-       // instance.actionPerformed(evt);
+        instance.actionPerformed(evt);
         // TODO review the generated test code and remove the default call to fail.
-      //  fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
     
 }

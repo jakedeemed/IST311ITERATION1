@@ -44,9 +44,8 @@ public class GameUITest {
     public void testRepaintLevel1() {
         System.out.println("repaintLevel1");
         GameUI instance = new GameUI();
-        //instance.repaintLevel1();
+        instance.repaintLevel1();
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -56,9 +55,8 @@ public class GameUITest {
     public void testRepaintLevel2() {
         System.out.println("repaintLevel2");
         GameUI instance = new GameUI();
-        //instance.repaintLevel2();
+        instance.repaintLevel2();
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

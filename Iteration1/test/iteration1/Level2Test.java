@@ -44,9 +44,8 @@ public class Level2Test {
     public void testEndGame() {
         System.out.println("endGame");
         Level2 instance = new Level2();
-        //instance.endGame();
+        instance.endGame();
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -56,9 +55,8 @@ public class Level2Test {
     public void testBackgroundImage() {
         System.out.println("backgroundImage");
         Level2 instance = new Level2();
-        //instance.backgroundImage();
+        instance.backgroundImage();
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -68,11 +66,10 @@ public class Level2Test {
     public void testGetLevel() {
         System.out.println("getLevel");
         Level2 instance = new Level2();
-        int expResult = 0;
+        int expResult = 1;
         int result = instance.getLevel();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -81,11 +78,10 @@ public class Level2Test {
     @Test
     public void testGetLevelDescription() {
         System.out.println("getLevelDescription");
-        String expResult = "";
+        String expResult = "YOU HEAR SHATTERED GLASS, AROUND THE CORNER COMES A BEAR. What will you do?";
         String result = Level2.getLevelDescription();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -95,11 +91,12 @@ public class Level2Test {
     public void testGetD1() {
         System.out.println("getD1");
         Level2 instance = new Level2();
-        String expResult = "";
+        String expResult = "You reach for a knife and the bear "
+                + "grabs the knife with his mouth and throws "
+                + "it across the room leaving you helpless. Try again.";
         String result = instance.getD1();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -109,11 +106,11 @@ public class Level2Test {
     public void testGetD2() {
         System.out.println("getD2");
         Level2 instance = new Level2();
-        String expResult = "";
+        String expResult = "You grab your hunting rifle and try to shoot the bear. "
+                + "You then quickly realize that the gun is not loaded. Try again.";
         String result = instance.getD2();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -123,11 +120,11 @@ public class Level2Test {
     public void testGetD3() {
         System.out.println("getD3");
         Level2 instance = new Level2();
-        String expResult = "";
+        String expResult = "You try to run out of the room but little did you know "
+                + "there is a pack of bears waiting for you outside of the house. Try again.";
         String result = instance.getD3();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -137,11 +134,11 @@ public class Level2Test {
     public void testGetD4() {
         System.out.println("getD4");
         Level2 instance = new Level2();
-        String expResult = "";
+        String expResult = "You run and pick up your cat. You show the cat to the bear "
+                + "and the bear gives a hug to the cat and then leaves your room.";
         String result = instance.getD4();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -151,11 +148,10 @@ public class Level2Test {
     public void testGetButton1() {
         System.out.println("getButton1");
         Level2 instance = new Level2();
-        String expResult = "";
+        String expResult = "Knife";
         String result = instance.getButton1();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -165,11 +161,10 @@ public class Level2Test {
     public void testGetButton2() {
         System.out.println("getButton2");
         Level2 instance = new Level2();
-        String expResult = "";
+        String expResult = "Rifle";
         String result = instance.getButton2();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -179,11 +174,10 @@ public class Level2Test {
     public void testGetButton3() {
         System.out.println("getButton3");
         Level2 instance = new Level2();
-        String expResult = "";
+        String expResult = "Run";
         String result = instance.getButton3();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -193,11 +187,10 @@ public class Level2Test {
     public void testGetButton4() {
         System.out.println("getButton4");
         Level2 instance = new Level2();
-        String expResult = "";
+        String expResult = "Cat";
         String result = instance.getButton4();
-        //assertEquals(expResult, result);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }
