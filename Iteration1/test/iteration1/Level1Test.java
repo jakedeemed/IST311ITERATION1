@@ -18,16 +18,6 @@ import static org.junit.Assert.*;
  */
 public class Level1Test {
 
-    /**
-     * Test of endGame method, of class Level1.
-     */
-    @Test
-    public void testEndGame() {
-        System.out.println("endGame");
-        Level1 instance = new Level1();
-        instance.endGame();
-        // TODO review the generated test code and remove the default call to fail.
-    }
 
     /**
      * Test of backgroundImage method, of class Level1.

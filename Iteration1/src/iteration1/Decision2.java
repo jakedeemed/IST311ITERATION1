@@ -6,7 +6,6 @@
 package iteration1;
 
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -15,8 +14,8 @@ import javax.swing.*;
  * @author Maxwell Kosabutski
  */
 public class Decision2 extends JPanel implements ActionListener{
-    private JTextArea j, level;
-    private JButton choice1, choice2, choice3, choice4;
+    private JTextArea j, level2;
+    protected JButton choice1, choice2, choice3, choice4;
     static String text = Level2.getLevelDescription();
 
     
@@ -26,9 +25,9 @@ public class Decision2 extends JPanel implements ActionListener{
 
     public Decision2(String one, String two, String three, String four)
     {
-        level= new JTextArea(text);
-        level.setEditable(false);
-        this.add(level);
+        level2= new JTextArea(text);
+        level2.setEditable(false);
+        this.add(level2);
         choice1 = new JButton(one);
         this.add(choice1);
         choice2 = new JButton(two);
@@ -48,36 +47,60 @@ public class Decision2 extends JPanel implements ActionListener{
         choice4.addActionListener(this);
     }  
     
+      public void addBackground(){
+        level2= new JTextArea(text);
+        level2.setEditable(false);
+        this.add(level2);      
+  }
+    
+    public JButton buttonOneClicked(){
+     Level2 two = new Level2();
+     j.setText(two.getD1());
+     this.setBackground(Color.red);
+     return choice1;
+    }
+    
+    public JButton buttonTwoClicked(){
+     Level2 two = new Level2();
+     j.setText(two.getD2());
+     this.setBackground(Color.red);
+     return choice2;
+    }
+    
+    public JButton buttonThreeClicked(){
+     Level2 two = new Level2();
+     j.setText(two.getD3());
+     this.setBackground(Color.red);
+     return choice3;
+    }
+     
+    public JButton buttonFourClicked(){
+     Level2 two = new Level2();
+     j.setText(two.getD4());
+     this.setBackground(Color.green);
+     return choice4;
+    }
+    
+    public void buttonRemover(JButton toRemove){
+    remove(toRemove);
+}
     public void actionPerformed(ActionEvent evt)
-    {
-        Level2 two = new Level2();
+    {        
+        Object o = evt.getSource();
         
-        Object obj = evt.getSource();
-        if(obj.equals(choice1)){
-            j.setText(two.getD1()); 
-            this.setBackground(Color.red);
-            remove(choice1);
-            
+        if (o == choice1) {
+      JButton toRemove = buttonOneClicked();
+      buttonRemover(toRemove);
+        }else if(o == choice2){
+      JButton toRemove = buttonTwoClicked();
+      buttonRemover(toRemove);
+        }else if(o == choice3){
+      JButton toRemove = buttonThreeClicked();
+      buttonRemover(toRemove);            
+        }else if (o == choice4){
+      JButton toRemove = buttonFourClicked();
+      buttonRemover(toRemove);            
         }
-        else if(obj.equals(choice2)){
-            j.setText(two.getD2()); 
-            this.setBackground(Color.red);
-            remove(choice2);
-            
-        }
-        else if(obj.equals(choice3)){
-            j.setText(two.getD3());  
-            this.setBackground(Color.red);
-            remove(choice3);
-        }
-        else if(obj.equals(choice4)){
-            j.setText(two.getD4());
-            this.setBackground(Color.green);
-            remove(choice1);
-            remove(choice2);
-            remove(choice3);
-            JOptionPane.showMessageDialog(null, "YOU WON THE GAME");
-            System.exit(0);
         }
     }
 
@@ -87,4 +110,4 @@ public class Decision2 extends JPanel implements ActionListener{
    
     
     
-}
+

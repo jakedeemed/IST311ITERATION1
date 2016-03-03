@@ -38,17 +38,6 @@ public class Level2Test {
     }
 
     /**
-     * Test of endGame method, of class Level2.
-     */
-    @Test
-    public void testEndGame() {
-        System.out.println("endGame");
-        Level2 instance = new Level2();
-        instance.endGame();
-        // TODO review the generated test code and remove the default call to fail.
-    }
-
-    /**
      * Test of backgroundImage method, of class Level2.
      */
     @Test
