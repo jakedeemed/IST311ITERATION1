@@ -49,7 +49,7 @@ public class Decision2 extends JPanel implements ActionListener{
     
       public void addBackground2(){
         setLayout(new BorderLayout());
-        levelImg = new JLabel(new ImageIcon("src/Images/bear.jpg"));
+        levelImg = new JLabel(new ImageIcon("src/Images/BearCat.PNG"));
         add(levelImg, BorderLayout.CENTER);        
   }
     
@@ -75,9 +75,6 @@ public class Decision2 extends JPanel implements ActionListener{
     }
      
     public JButton buttonFourClicked(){
-     Level2 two = new Level2();
-     JOptionPane.showMessageDialog(null, two.getD4()); 
-     this.setBackground(Color.green);
      return choice4;
     }
     
@@ -101,8 +98,10 @@ public class Decision2 extends JPanel implements ActionListener{
       buttonRemover(toRemove);
         }
       else if (o.equals(choice4)){
-      JButton toRemove = buttonFourClicked();
-      buttonRemover(toRemove);   
+          JOptionPane.showMessageDialog(null, "Congratulations, you have successfully won"
+             + " the Illogical Zombie game!  Check back in a few more weeks for more "
+             + "levels.  Thanks for playing!"); 
+          System.exit(0);
       
         }
     }

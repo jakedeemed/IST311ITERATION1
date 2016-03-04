@@ -16,7 +16,7 @@ import javax.swing.*;
  */
 public class Decision1 extends JPanel implements ActionListener{
     
-    protected JButton choice1, choice2, choice3, choice4;
+    protected JButton choice1, choice2, choice3, choice4, rightChoice;
     protected JLabel levelImg;
 
     
@@ -52,7 +52,7 @@ public class Decision1 extends JPanel implements ActionListener{
     
   public void addBackground1(){
         setLayout(new BorderLayout());
-        levelImg = new JLabel(new ImageIcon("src/Images/zombie.jpg"));
+        levelImg = new JLabel(new ImageIcon("src/Images/ZombieTeddy.PNG"));
         add(levelImg, BorderLayout.CENTER);   
   }
 
@@ -64,9 +64,6 @@ public class Decision1 extends JPanel implements ActionListener{
   }
  
   public JButton buttonTwoClicked(){
-    Level1 one = new Level1();
-    JOptionPane.showMessageDialog(null, one.getD2()); 
-    this.setBackground(Color.GREEN);
     return choice2;
   }
   
@@ -90,19 +87,24 @@ public void buttonRemover(JButton toRemove){
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        Level2 nextLevel = new Level2();
+        rightChoice = new JButton();
         Object o = ae.getSource();
         
         if (o.equals(choice1)) {
       JButton toRemove = buttonOneClicked();
       buttonRemover(toRemove);
+      
         }else if(o.equals(choice2)){
-      JButton toRemove = buttonTwoClicked();
-      buttonRemover(toRemove);
-        nextLevel.initiatingLevel();
+            
+            this.setVisible(false);
+            Level2 initLevel = new Level2();
+            initLevel.initiatingLevel();
+        
+        
         }else if(o.equals(choice3)){
       JButton toRemove = buttonThreeClicked();
-      buttonRemover(toRemove);            
+      buttonRemover(toRemove);  
+      
         }else if (o.equals(choice4)){
       JButton toRemove = buttonFourClicked();
       buttonRemover(toRemove);            

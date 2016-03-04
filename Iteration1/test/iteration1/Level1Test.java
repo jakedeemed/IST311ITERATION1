@@ -26,7 +26,7 @@ public class Level1Test {
     public void testBackgroundImage() {
         System.out.println("backgroundImage");
         Level1 instance = new Level1();
-        instance.backgroundImage();
+        //instance.backgroundImage();
         // TODO review the generated test code and remove the default call to fail.
           }
 

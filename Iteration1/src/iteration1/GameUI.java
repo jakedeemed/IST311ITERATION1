@@ -35,13 +35,14 @@ import javax.swing.Timer;
 public class GameUI extends JFrame implements ActionListener{
     JPanel firstPanel;
     JPanel panel;
-    JFrame frame;
+    JFrame frame = new JFrame("The Illogical Zombie");
     JLabel label;
     JButton startButton;
     JFrame firstFrame;
     JLabel firstLabel;
     JPanel levelOnePanel;
     Level1 Level1;
+    
     Level2 Level2;
     Decision1 Decision1;
     Decision2 Decision2;
@@ -50,15 +51,19 @@ public class GameUI extends JFrame implements ActionListener{
     ImageIcon gameLogo;
     Timer levelTimer;
     
-    
-    
+
     
     
     public GameUI()
     {
+        initUI();
+    }
+
+    
+    public void initUI(){
         this.setLayout(new BorderLayout());
         
-        frame = new JFrame("The Illocical Zombie");
+        
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
         Container mainPane = getContentPane();
@@ -88,8 +93,6 @@ public class GameUI extends JFrame implements ActionListener{
         frame.setSize(500, 230);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        
-        
     }
     
 
@@ -97,11 +100,13 @@ public class GameUI extends JFrame implements ActionListener{
         Level1 = new Level1();
         Object click = e.getSource();
         if (click.equals(startButton)){
+            frame.setVisible(false);
             Level1.initiatingLevel();
         }
     }
      
     public void startLevel1(){
+        
         Level1 = new Level1();
         Decision1 = new Decision1();
         
@@ -118,11 +123,15 @@ public class GameUI extends JFrame implements ActionListener{
 
         frame.setSize(500, 400);
         frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
         
+ 
         
     }
+
     
     public void startLevel2(){
+        
         Level2 = new Level2();
         Decision2 = new Decision2();
         
@@ -139,6 +148,7 @@ public class GameUI extends JFrame implements ActionListener{
         
         frame.setSize(500,400);
         frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 }
 

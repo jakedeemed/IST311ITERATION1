@@ -11,6 +11,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -26,6 +27,7 @@ public class Level2 extends JPanel implements ActionListener{
     private int levelTraverse;
     JButton startLevel;
     JTextArea levelDescription;
+    Container initiateLevelPane;
     GameUI newUI;
     public Level2(){
         
@@ -43,7 +45,6 @@ public class Level2 extends JPanel implements ActionListener{
         return 1;
     }
     public void actionPerformed(ActionEvent e){
-        newUI = new GameUI();
         Object click = e.getSource();
         if (click.equals(startLevel)){
              newUI.startLevel2();
@@ -55,7 +56,7 @@ public class Level2 extends JPanel implements ActionListener{
         
         newUI = new GameUI();
         newUI.frame.getContentPane().removeAll();
-        Container initiateLevelPane = newUI.frame.getContentPane();
+        initiateLevelPane = newUI.frame.getContentPane();
         
         levelDescription = new JTextArea(5, 20);
         levelDescription.setText(Level2.getLevelDescription());
@@ -75,7 +76,12 @@ public class Level2 extends JPanel implements ActionListener{
         
     }
     public static String getLevelDescription(){
-        String levelDescription = "YOU HEAR SHATTERED GLASS, AROUND THE CORNER COMES A BEAR. What will you do?";
+        String levelDescription = "Congratulations on making it out of Level 1, now you are"
+                + "being faced with a new scenario: "
+                + "Your sitting quitely in your cabin reading a book by the window,"
+                + "and all of the sudden you look up and out of the window.  You see a bear charging "
+                + "directly towards your cabin, so you get up and run to another room.  Seconds later"
+                + " you hear glass shatter and you are now faced with the bear, what will you do?";
         return levelDescription;
     }
     public String getD1(){

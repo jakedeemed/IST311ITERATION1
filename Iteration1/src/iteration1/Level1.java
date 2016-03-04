@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -30,6 +31,7 @@ public class Level1 extends JPanel implements ActionListener{
     JButton startLevel;
     JTextArea levelDescription;
     GameUI newUI;
+    Container initiateLevelPane;
     public Level1(){
         
     }
@@ -51,10 +53,11 @@ public class Level1 extends JPanel implements ActionListener{
         return 1;
     }
     public void actionPerformed(ActionEvent e){
-        newUI = new GameUI();
+
         Object click = e.getSource();
         if (click.equals(startLevel)){
-             newUI.startLevel1();
+            newUI.frame.setVisible(false);
+            newUI.startLevel1();
         }
     }
     public void initiatingLevel(){
@@ -63,7 +66,7 @@ public class Level1 extends JPanel implements ActionListener{
         
         newUI = new GameUI();
         newUI.frame.getContentPane().removeAll();
-        Container initiateLevelPane = newUI.frame.getContentPane();
+        initiateLevelPane = newUI.frame.getContentPane();
         
         levelDescription = new JTextArea(5, 20);
         levelDescription.setText(Level1.getLevelDescription());
