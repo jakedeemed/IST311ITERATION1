@@ -38,24 +38,24 @@ public class GameUITest {
     }
 
     /**
-     * Test of repaintLevel1 method, of class GameUI.
+     * Test of startLevel1 method, of class GameUI.
      */
     @Test
     public void testRepaintLevel1() {
         System.out.println("repaintLevel1");
         GameUI instance = new GameUI();
-        instance.repaintLevel1();
+        instance.startLevel1();
         // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
-     * Test of repaintLevel2 method, of class GameUI.
+     * Test of startLevel2 method, of class GameUI.
      */
     @Test
     public void testRepaintLevel2() {
         System.out.println("repaintLevel2");
         GameUI instance = new GameUI();
-        instance.repaintLevel2();
+        instance.startLevel2();
         // TODO review the generated test code and remove the default call to fail.
     }
     

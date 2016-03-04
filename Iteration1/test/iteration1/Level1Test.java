@@ -46,7 +46,9 @@ public class Level1Test {
     /**
      * Test of getLevelDescription method, of class Level1.
      */
+    /*
     @Test
+    
     public void testGetLevelDescription() {
         System.out.println("getLevelDescription");
         String expResult = "It is late at night, you are laying in bed. You then hear a knock on the door and start to wonder who is visiting so late. "
@@ -56,6 +58,7 @@ public class Level1Test {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    */
 
     /**
      * Test of getD1 method, of class Level1.

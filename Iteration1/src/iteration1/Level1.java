@@ -5,16 +5,31 @@
  */
 package iteration1;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.Timer;
+
 
 
 /**
  *
  * @author jakedotts
  */
-public class Level1 extends LevelSuper{
+public class Level1 extends JPanel implements ActionListener{
     
       
-    private int levelTraverse;
+    JButton levelImg;
+    JButton startLevel;
+    JTextArea levelDescription;
+    GameUI newUI;
     public Level1(){
         
     }
@@ -23,38 +38,81 @@ public class Level1 extends LevelSuper{
     public void endGame(){
         System.exit(0);
     }
-    public void backgroundImage()
-    {
-    }
+    
+    public void addBackground1(){
+
+        this.setLayout(new BorderLayout());
+        levelImg = new JButton(new ImageIcon("src/Images/zombie.jpg"));
+        this.add(levelImg, BorderLayout.CENTER);
+  
+  }
     public int getLevel(){
         //levelTraverse
         return 1;
     }
+    public void actionPerformed(ActionEvent e){
+        newUI = new GameUI();
+        Object click = e.getSource();
+        if (click.equals(startLevel)){
+             newUI.startLevel1();
+        }
+    }
+    public void initiatingLevel(){
+        
+        this.setLayout(new BorderLayout());
+        
+        newUI = new GameUI();
+        newUI.frame.getContentPane().removeAll();
+        Container initiateLevelPane = newUI.frame.getContentPane();
+        
+        levelDescription = new JTextArea(5, 20);
+        levelDescription.setText(Level1.getLevelDescription());
+        JScrollPane scrollPane = new JScrollPane(levelDescription); 
+        levelDescription.setEditable(false);
+        levelDescription.setLineWrap(true);
+        levelDescription.setWrapStyleWord(true);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setPreferredSize(new Dimension(100, 100));
+        
+        startLevel = new JButton("Start Level 1");
+        startLevel.addActionListener(this);
+        
+        initiateLevelPane.add(levelDescription, BorderLayout.NORTH);
+        initiateLevelPane.add(startLevel, BorderLayout.SOUTH);
+        
+        
+    }
     public static String getLevelDescription(){
+
         String levelDescription = "It is late at night, you are laying in bed. You then hear a knock on the door and start to wonder who is visiting so late. "
                 + "You then hear the door slam open and footsteps running up the staircase."
                 + "All of a sudden a zombie busts through your bedroom door. What do you do?";
         return levelDescription;
     }
+
     public String getD1(){
         String newDecision1 = "You reach for your nearby "
                 + "umbrella and try to fend off the zombie. "
                 + "The zombie snaps the umbrella into pieces. Try again.";
+                
         return newDecision1;
     }
     public String getD2(){
         String newDecision2 = "The zombie gracefully accepts your "
                 + "teddy bear and exits through the window";
+        
         return newDecision2;
     }
     public String getD3(){
         String newDecision3 = "You try to jump out of the window and the zombie "
                 + "grabs your legs and pulls you back into your bedroom. Try again.";
+                
         return newDecision3;
     }
     public String getD4(){
         String newDecision4 = "You attempt to fight the zombie and you lose "
                 + "the fight. Good try.";
+                
         return newDecision4;
     }
     
@@ -70,35 +128,5 @@ public class Level1 extends LevelSuper{
     public String getButton4(){
         return "Fight";
     }    
-    /*
-    choice1 = new JButton("Umbrella");
-        this.add(choice1);
-        choice2 = new JButton("Teddy Bear");
-        this.add(choice2);
-        choice3 = new JButton("Window");
-        this.add(choice3);
-        choice4 = new JButton("Fight");
-    
-    
-    
-    j.setText("You reach for your nearby umbrella and try to fend off the zombie. The zombie snaps the umbrella into pieces.");      
-        }
-        if(obj.equals(choice2))
-        {
-            j.setText("The zombie gracefully accepts your teddy bear and exits through the window");
-            
-        }
-        
-        if(obj.equals(choice3))
-        {
-            j.setText("You try to jump out of the window and the zombie grabs your legs and pulls you back into your bedroom.");
-            
-        }
-        
-        if(obj.equals(choice4))
-        {
-            j.setText("You attempt to fight the zombie and you lose the fight. Good try");
-        }
-    
-    */
+
 }

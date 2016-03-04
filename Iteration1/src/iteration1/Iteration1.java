@@ -20,7 +20,7 @@ public class Iteration1 {
     {
         
         GameUI frame1 = new GameUI();
-        frame1.repaintLevel1();
+        //frame1.startLevel1();
 
            
     }

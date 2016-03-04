@@ -5,15 +5,28 @@
  */
 package iteration1;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 
 /**
  *
  * @author jakedotts
  */
-public class Level2 extends LevelSuper{
+public class Level2 extends JPanel implements ActionListener{
     
     
     private int levelTraverse;
+    JButton startLevel;
+    JTextArea levelDescription;
+    GameUI newUI;
     public Level2(){
         
     }
@@ -28,6 +41,38 @@ public class Level2 extends LevelSuper{
     public int getLevel(){
         //levelTraverse
         return 1;
+    }
+    public void actionPerformed(ActionEvent e){
+        newUI = new GameUI();
+        Object click = e.getSource();
+        if (click.equals(startLevel)){
+             newUI.startLevel2();
+        }
+    }
+    public void initiatingLevel(){
+        
+        this.setLayout(new BorderLayout());
+        
+        newUI = new GameUI();
+        newUI.frame.getContentPane().removeAll();
+        Container initiateLevelPane = newUI.frame.getContentPane();
+        
+        levelDescription = new JTextArea(5, 20);
+        levelDescription.setText(Level2.getLevelDescription());
+        JScrollPane scrollPane = new JScrollPane(levelDescription); 
+        levelDescription.setEditable(false);
+        levelDescription.setLineWrap(true);
+        levelDescription.setWrapStyleWord(true);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setPreferredSize(new Dimension(100, 100));
+        
+        startLevel = new JButton("Start Level 2");
+        startLevel.addActionListener(this);
+        
+        initiateLevelPane.add(levelDescription, BorderLayout.NORTH);
+        initiateLevelPane.add(startLevel, BorderLayout.SOUTH);
+        
+        
     }
     public static String getLevelDescription(){
         String levelDescription = "YOU HEAR SHATTERED GLASS, AROUND THE CORNER COMES A BEAR. What will you do?";
@@ -66,35 +111,5 @@ public class Level2 extends LevelSuper{
     public String getButton4(){
         return "Cat";
     }    
-    /*
-    choice1 = new JButton("Umbrella");
-        this.add(choice1);
-        choice2 = new JButton("Teddy Bear");
-        this.add(choice2);
-        choice3 = new JButton("Window");
-        this.add(choice3);
-        choice4 = new JButton("Fight");
     
-    
-    
-    j.setText("You reach for your nearby umbrella and try to fend off the zombie. The zombie snaps the umbrella into pieces.");      
-        }
-        if(obj.equals(choice2))
-        {
-            j.setText("The zombie gracefully accepts your teddy bear and exits through the window");
-            
-        }
-        
-        if(obj.equals(choice3))
-        {
-            j.setText("You try to jump out of the window and the zombie grabs your legs and pulls you back into your bedroom.");
-            
-        }
-        
-        if(obj.equals(choice4))
-        {
-            j.setText("You attempt to fight the zombie and you lose the fight. Good try");
-        }
-    
-    */
 }
