@@ -13,7 +13,7 @@ package iteration1;
  */
 public class Level1 extends LevelSuper{
     
-    
+      
     private int levelTraverse;
     public Level1(){
         
@@ -23,8 +23,8 @@ public class Level1 extends LevelSuper{
     public void endGame(){
         System.exit(0);
     }
-    public void backgroundImage(){
-        
+    public void backgroundImage()
+    {
     }
     public int getLevel(){
         //levelTraverse
@@ -57,6 +57,7 @@ public class Level1 extends LevelSuper{
                 + "the fight. Good try.";
         return newDecision4;
     }
+    
     public String getButton1(){
         return "Umbrella";
     }
