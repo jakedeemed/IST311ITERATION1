@@ -5,6 +5,7 @@
  */
 package iteration1;
 
+import java.awt.event.ActionEvent;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,51 +15,55 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Edgar
+ * @author jakedotts
  */
 public class Level1Test {
+    
+    public Level1Test() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
 
 
     /**
-     * Test of backgroundImage method, of class Level1.
+     * Test of initiateLevel method, of class Level1.
      */
     @Test
-    public void testBackgroundImage() {
-        System.out.println("backgroundImage");
+    public void testInitiateLevel() {
+        System.out.println("initiateLevel");
         Level1 instance = new Level1();
-        //instance.backgroundImage();
-        // TODO review the generated test code and remove the default call to fail.
-          }
-
-    /**
-     * Test of getLevel method, of class Level1.
-     */
-    @Test
-    public void testGetLevel() {
-        System.out.println("getLevel");
-        Level1 instance = new Level1();
-        int expResult = 1;
-        int result = instance.getLevel();
-        assertEquals(expResult, result);
+        instance.initiateLevel();
         // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
      * Test of getLevelDescription method, of class Level1.
      */
-    /*
     @Test
-    
     public void testGetLevelDescription() {
         System.out.println("getLevelDescription");
-        String expResult = "It is late at night, you are laying in bed. You then hear a knock on the door and start to wonder who is visiting so late. "
+        String expResult = "It is late at night, you are laying in bed. You then hear "
+                + "a knock on the door and start to wonder who is visiting so late. "
                 + "You then hear the door slam open and footsteps running up the staircase."
                 + "All of a sudden a zombie busts through your bedroom door. What do you do?";
         String result = Level1.getLevelDescription();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
-    */
 
     /**
      * Test of getD1 method, of class Level1.
@@ -88,7 +93,6 @@ public class Level1Test {
         String result = instance.getD2();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        
     }
 
     /**
@@ -103,7 +107,6 @@ public class Level1Test {
         String result = instance.getD3();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-
     }
 
     /**
@@ -157,6 +160,7 @@ public class Level1Test {
         String result = instance.getButton3();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
+
     }
 
     /**

@@ -35,14 +35,13 @@ import javax.swing.Timer;
 public class GameUI extends JFrame implements ActionListener{
     JPanel firstPanel;
     JPanel panel;
-    JFrame frame = new JFrame("The Illogical Zombie");
+    JFrame frame;
     JLabel label;
     JButton startButton;
     JFrame firstFrame;
     JLabel firstLabel;
     JPanel levelOnePanel;
-    Level1 Level1;
-    
+    Level1 Level1; 
     Level2 Level2;
     Decision1 Decision1;
     Decision2 Decision2;
@@ -63,7 +62,7 @@ public class GameUI extends JFrame implements ActionListener{
     public void initUI(){
         this.setLayout(new BorderLayout());
         
-        
+        frame = new JFrame("The Illogical Zombie");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
         Container mainPane = getContentPane();
@@ -101,7 +100,7 @@ public class GameUI extends JFrame implements ActionListener{
         Object click = e.getSource();
         if (click.equals(startButton)){
             frame.setVisible(false);
-            Level1.initiatingLevel();
+            Level1.initiateLevel();
         }
     }
      
@@ -125,7 +124,6 @@ public class GameUI extends JFrame implements ActionListener{
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         
- 
         
     }
 

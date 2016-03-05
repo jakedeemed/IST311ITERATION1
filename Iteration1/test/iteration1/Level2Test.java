@@ -5,6 +5,7 @@
  */
 package iteration1;
 
+import java.awt.event.ActionEvent;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,7 +15,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Edgar
+ * @author jakedotts
  */
 public class Level2Test {
     
@@ -37,27 +38,15 @@ public class Level2Test {
     public void tearDown() {
     }
 
-    /**
-     * Test of backgroundImage method, of class Level2.
-     */
-    @Test
-    public void testBackgroundImage() {
-        System.out.println("backgroundImage");
-        Level2 instance = new Level2();
-        instance.backgroundImage();
-        // TODO review the generated test code and remove the default call to fail.
-    }
 
     /**
-     * Test of getLevel method, of class Level2.
+     * Test of initiateLevel method, of class Level2.
      */
     @Test
-    public void testGetLevel() {
-        System.out.println("getLevel");
+    public void testInitiateLevel() {
+        System.out.println("initiateLevel");
         Level2 instance = new Level2();
-        int expResult = 1;
-        int result = instance.getLevel();
-        assertEquals(expResult, result);
+        instance.initiateLevel();
         // TODO review the generated test code and remove the default call to fail.
     }
 
@@ -67,7 +56,12 @@ public class Level2Test {
     @Test
     public void testGetLevelDescription() {
         System.out.println("getLevelDescription");
-        String expResult = "YOU HEAR SHATTERED GLASS, AROUND THE CORNER COMES A BEAR. What will you do?";
+        String expResult = "Congratulations on making it out of Level 1, now you are"
+                + "being faced with a new scenario: "
+                + "Your sitting quitely in your cabin reading a book by the window,"
+                + "and all of the sudden you look up and out of the window.  You see a bear charging "
+                + "directly towards your cabin, so you get up and run to another room.  Seconds later"
+                + " you hear glass shatter and you are now faced with the bear, what will you do?";
         String result = Level2.getLevelDescription();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -86,6 +80,7 @@ public class Level2Test {
         String result = instance.getD1();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
+
     }
 
     /**

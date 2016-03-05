@@ -32,26 +32,12 @@ public class Level1 extends JPanel implements ActionListener{
     JTextArea levelDescription;
     GameUI newUI;
     Container initiateLevelPane;
+    
+    
     public Level1(){
         
     }
     
-
-    public void endGame(){
-        System.exit(0);
-    }
-    
-    public void addBackground1(){
-
-        this.setLayout(new BorderLayout());
-        levelImg = new JButton(new ImageIcon("src/Images/zombie.jpg"));
-        this.add(levelImg, BorderLayout.CENTER);
-  
-  }
-    public int getLevel(){
-        //levelTraverse
-        return 1;
-    }
     public void actionPerformed(ActionEvent e){
 
         Object click = e.getSource();
@@ -60,7 +46,7 @@ public class Level1 extends JPanel implements ActionListener{
             newUI.startLevel1();
         }
     }
-    public void initiatingLevel(){
+    public void initiateLevel(){
         
         this.setLayout(new BorderLayout());
         
@@ -85,9 +71,12 @@ public class Level1 extends JPanel implements ActionListener{
         
         
     }
+    
+    
     public static String getLevelDescription(){
 
-        String levelDescription = "It is late at night, you are laying in bed. You then hear a knock on the door and start to wonder who is visiting so late. "
+        String levelDescription = "It is late at night, you are laying in bed. You then hear "
+                + "a knock on the door and start to wonder who is visiting so late. "
                 + "You then hear the door slam open and footsteps running up the staircase."
                 + "All of a sudden a zombie busts through your bedroom door. What do you do?";
         return levelDescription;

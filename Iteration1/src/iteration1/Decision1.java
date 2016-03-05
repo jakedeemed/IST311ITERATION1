@@ -98,7 +98,7 @@ public void buttonRemover(JButton toRemove){
             
             this.setVisible(false);
             Level2 initLevel = new Level2();
-            initLevel.initiatingLevel();
+            initLevel.initiateLevel();
         
         
         }else if(o.equals(choice3)){

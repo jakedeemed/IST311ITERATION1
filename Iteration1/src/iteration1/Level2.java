@@ -32,25 +32,14 @@ public class Level2 extends JPanel implements ActionListener{
     public Level2(){
         
     }
-    
-
-    public void endGame(){
-        System.exit(0);
-    }
-    public void backgroundImage(){
-        
-    }
-    public int getLevel(){
-        //levelTraverse
-        return 1;
-    }
+   
     public void actionPerformed(ActionEvent e){
         Object click = e.getSource();
         if (click.equals(startLevel)){
              newUI.startLevel2();
         }
     }
-    public void initiatingLevel(){
+    public void initiateLevel(){
         
         this.setLayout(new BorderLayout());
         
