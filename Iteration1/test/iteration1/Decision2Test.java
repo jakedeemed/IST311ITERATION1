@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package iteration1;
-
-import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import org.junit.After;
 import org.junit.AfterClass;

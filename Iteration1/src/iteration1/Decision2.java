@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Each ButtonClicked method was calling an instance of level2. I Refactored by adding a level2 instance that applies to the whole class instead
+ * of being called for every method. I also organized the actionListeners
+ * Refactored by: Edgar J. Cotto
  */
 package iteration1;
 
@@ -18,33 +18,38 @@ public class Decision2 extends JPanel implements ActionListener{
     protected JButton choice1, choice2, choice3, choice4;
     protected JLabel levelImg;
 
-    
-    public Decision2(){
-        
-    }
+    //Level2 Instance
+    Level2 two = new Level2();
 
+     public Decision2(){
+    }
+    
     public Decision2(String one, String two, String three, String four)
     {
+        //Creates the Buttons and specific choices for the level. Also adds ActionListeners 
         this.setLayout(new BorderLayout());
         
         addBackground2();
         
         choice1 = new JButton(one);
         this.add(choice1, BorderLayout.NORTH);
+        choice1.addActionListener(this);
+
         
         choice2 = new JButton(two);
         this.add(choice2, BorderLayout.WEST);
+        choice2.addActionListener(this);
+
 
         choice3 = new JButton(three);
         this.add(choice3, BorderLayout.EAST);
+        choice3.addActionListener(this);
+
 
         choice4 = new JButton(four);
         this.add(choice4, BorderLayout.SOUTH);
-        
-           choice1.addActionListener(this);
-           choice2.addActionListener(this);
-           choice3.addActionListener(this);
-           choice4.addActionListener(this);
+        choice4.addActionListener(this);
+
     }  
     
       public void addBackground2(){
@@ -54,21 +59,18 @@ public class Decision2 extends JPanel implements ActionListener{
   }
     
     public JButton buttonOneClicked(){
-     Level2 two = new Level2();
      JOptionPane.showMessageDialog(null, two.getD1()); 
      this.setBackground(Color.red);
      return choice1;
     }
     
     public JButton buttonTwoClicked(){
-     Level2 two = new Level2();
      JOptionPane.showMessageDialog(null, two.getD2()); 
      this.setBackground(Color.red);
      return choice2;
     }
     
     public JButton buttonThreeClicked(){
-     Level2 two = new Level2();
      JOptionPane.showMessageDialog(null, two.getD3()); 
      this.setBackground(Color.red);
      return choice3;
