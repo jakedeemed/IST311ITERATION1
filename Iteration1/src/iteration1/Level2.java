@@ -2,6 +2,8 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ * Refactoring done by Maxwell Kosabutski, renamed level description string to theSituation and made it final.
+ * also instantiated it in the class, not the getter method.
  */
 package iteration1;
 
@@ -29,6 +31,13 @@ public class Level2 extends JPanel implements ActionListener{
     JTextArea levelDescription;
     Container initiateLevelPane;
     GameUI newUI;
+    private static final String theSituation = "Congratulations on making it out of Level 1, now you are"
+        + "being faced with a new scenario: "
+        + "Your sitting quitely in your cabin reading a book by the window,"
+        + "and all of the sudden you look up and out of the window.  You see a bear charging "
+        + "directly towards your cabin, so you get up and run to another room.  Seconds later"
+        + " you hear glass shatter and you are now faced with the bear, what will you do?";
+    
     public Level2(){
         
     }
@@ -65,13 +74,8 @@ public class Level2 extends JPanel implements ActionListener{
         
     }
     public static String getLevelDescription(){
-        String levelDescription = "Congratulations on making it out of Level 1, now you are"
-                + "being faced with a new scenario: "
-                + "Your sitting quitely in your cabin reading a book by the window,"
-                + "and all of the sudden you look up and out of the window.  You see a bear charging "
-                + "directly towards your cabin, so you get up and run to another room.  Seconds later"
-                + " you hear glass shatter and you are now faced with the bear, what will you do?";
-        return levelDescription;
+
+        return theSituation;
     }
     public String getD1(){
         String newDecision1 = "You reach for a knife and the bear "
