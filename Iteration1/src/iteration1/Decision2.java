@@ -90,14 +90,17 @@ public class Decision2 extends JPanel implements ActionListener{
       if (o.equals(choice1)) {
       JButton toRemove = buttonOneClicked();
       buttonRemover(toRemove);
+      repaint();
         }
       else if(o.equals(choice2)){
       JButton toRemove = buttonTwoClicked();
       buttonRemover(toRemove);
+      repaint();
         }
       else if(o.equals(choice3)){
       JButton toRemove = buttonThreeClicked();
       buttonRemover(toRemove);
+      repaint();
         }
       else if (o.equals(choice4)){
           JOptionPane.showMessageDialog(null, "Congratulations, you have successfully won"

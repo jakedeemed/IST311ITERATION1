@@ -95,21 +95,24 @@ public void buttonRemover(JButton toRemove){
         if (o.equals(choice1)) {
       JButton toRemove = buttonOneClicked();
       buttonRemover(toRemove);
-      
+      repaint();
+  
         }else if(o.equals(choice2)){
             
-            this.setVisible(false);
-            Level2 initLevel = new Level2();
-            initLevel.initiateLevel();
-        
+        this.setVisible(false);
+        Level2 initLevel = new Level2();
+        initLevel.initiateLevel();
+        repaint();
         
         }else if(o.equals(choice3)){
-      JButton toRemove = buttonThreeClicked();
-      buttonRemover(toRemove);  
+        JButton toRemove = buttonThreeClicked();
+        buttonRemover(toRemove);
+        repaint();
       
         }else if (o.equals(choice4)){
       JButton toRemove = buttonFourClicked();
-      buttonRemover(toRemove);            
+      buttonRemover(toRemove);
+      repaint();
         }
     }
 
