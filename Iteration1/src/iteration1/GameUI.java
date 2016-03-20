@@ -33,24 +33,18 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.Timer;
 public class GameUI extends JFrame implements ActionListener{
-    JPanel firstPanel;
-    JPanel panel;
-    JFrame frame;
-    JLabel label;
-    JButton startButton;
-    JFrame firstFrame;
-    JLabel firstLabel;
-    JPanel levelOnePanel;
-    Level1 Level1; 
-    Level2 Level2;
-    Decision1 Decision1;
-    Decision2 Decision2;
-    JTextArea gameDescription;
-    JTextArea levelDescription;
-    ImageIcon gameLogo;
-    Timer levelTimer;
     
-
+    
+    Level1 Level1 = new Level1();
+    Level2 Level2 = new Level2();
+    JFrame frame;   
+    JTextArea gameDescription;
+    JScrollPane buildLevelInitiateDesc;
+    Container mainPane;
+    JPanel parentPanel, startPanel, initL1Panel, initL2Panel, buildL1Panel, buildL2Panel;
+    JButton startButton, nextL1, nextL2, startLevel1, startLevel2;
+    
+    
     
     
     public GameUI()
@@ -58,16 +52,38 @@ public class GameUI extends JFrame implements ActionListener{
         initUI();
     }
 
-    
+    //added panels to build on top of the frame for more modularity through
+    //the rest of the program
+    //refactor: Jake Dotts
     public void initUI(){
-        this.setLayout(new BorderLayout());
         
         frame = new JFrame("The Illogical Zombie");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        Container mainPane = getContentPane();
+        parentPanel = new JPanel();
+        
+        startPanel = new JPanel();
+        startPanel.setLayout(new BorderLayout());
+        startPanel.setPreferredSize(new Dimension(500, 400));   
         
         JLabel logoButton = new JLabel(new ImageIcon("src/Images/IllogicalZombieLogo.png"));
+        
+        startButton = new JButton("Start Game");
+        startButton.addActionListener(this);
+        
+        startPanel.add(startButton, BorderLayout.SOUTH);
+        startPanel.add(initUIScrollPane(), BorderLayout.CENTER);
+        startPanel.add(logoButton, BorderLayout.NORTH);
+        
+        parentPanel.add(startPanel);
+        
+        frame.add(parentPanel);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+    
+    public JScrollPane initUIScrollPane(){
         
         gameDescription = new JTextArea(5, 20);
         gameDescription.setText("Welcome to 'The Illogical Zombie' your thirty second thrill"
@@ -81,72 +97,132 @@ public class GameUI extends JFrame implements ActionListener{
         gameDescription.setWrapStyleWord(true);
         scrollPane.setPreferredSize(new Dimension(100, 100));
         
-        startButton = new JButton("Start Game");
-        startButton.addActionListener(this);
-        
-        mainPane.add(startButton, BorderLayout.SOUTH);
-        mainPane.add(scrollPane, BorderLayout.CENTER);
-        mainPane.add(logoButton, BorderLayout.NORTH);
-        
-        frame.add(mainPane);
-        frame.setSize(500, 230);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        return scrollPane;
     }
     
-
+    
     public void actionPerformed(ActionEvent e){
-        Level1 = new Level1();
+        
         Object click = e.getSource();
-        if (click.equals(startButton)){
-            frame.setVisible(false);
-            Level1.initiateLevel();
+        
+        if (click.equals(startButton)){  
+            initLevel1();
         }
-    }
-     
-    public void startLevel1(){
         
-        Level1 = new Level1();
-        Decision1 = new Decision1();
+        if (click.equals(startLevel1)){ 
+            buildLevel1();
+        }
         
-        frame.getContentPane().removeAll();
-        Container level1Pane = frame.getContentPane();
+        if (click.equals(nextL1)){    
+            initLevel2();
+        }
         
-        String one = Level1.getButton1();
-        String two = Level1.getButton2();
-        String three = Level1.getButton3();
-        String four = Level1.getButton4();
+        if (click.equals(startLevel2)){
+            buildLevel2();
+        }
         
-        Decision1 buttonPanel = new Decision1(one,two,three,four);
-        level1Pane.add(buttonPanel);
-
-        frame.setSize(500, 400);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-        
+        if (click.equals(nextL2)){
+            System.exit(0);
+        }
         
     }
-
     
-    public void startLevel2(){
+    //added the init and build methods to make the program more modular
+    //when working with the panels
+    //refactor: Jake Dotts
+     
+    //added: J.D.
+    public void initLevel1(){
         
-        Level2 = new Level2();
-        Decision2 = new Decision2();
+        parentPanel.remove(startPanel);
         
-        frame.getContentPane().removeAll();
-        Container level2Pane = frame.getContentPane();
+        initL1Panel = new JPanel();
+        initL1Panel.setLayout(new BorderLayout());
+        initL1Panel.setPreferredSize(new Dimension(500, 400));
         
-        String one1 = Level2.getButton1();
-        String two1 = Level2.getButton2();
-        String three1 = Level2.getButton3();
-        String four1 = Level2.getButton4();
+        buildLevelInitiateDesc = Level1.buildLevelInitiateDescription();
         
-        Decision2 buttonPanel = new Decision2(one1,two1,three1,four1);
-        level2Pane.add(buttonPanel);
+        startLevel1 = new JButton("Start Level 1");
+        startLevel1.addActionListener(this);
         
-        frame.setSize(500,400);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        initL1Panel.add(buildLevelInitiateDesc, BorderLayout.NORTH);
+        initL1Panel.add(startLevel1, BorderLayout.SOUTH);
+        
+        parentPanel.add(initL1Panel);
+        parentPanel.revalidate();
+        parentPanel.repaint();
+        pack();
+
+        
+        
     }
+    
+    //added: J.D.
+    public void buildLevel1(){
+        
+        nextL1 = new JButton("> Next Level >");
+        nextL1.addActionListener(this);
+        
+        parentPanel.remove(initL1Panel);
+        
+        buildL1Panel = new JPanel();
+        buildL1Panel.setPreferredSize(new Dimension(500, 400));
+        buildL1Panel.add(Level1.startLevel());
+        
+        buildL1Panel.add(nextL1);
+        
+        parentPanel.add(buildL1Panel);
+        parentPanel.revalidate();
+        parentPanel.repaint();
+        pack();
+        
+    }
+    
+    //added: J.D.
+    public void initLevel2(){
+        
+        parentPanel.remove(buildL1Panel);
+        
+        initL2Panel = new JPanel();
+        initL2Panel.setLayout(new BorderLayout());
+        initL2Panel.setPreferredSize(new Dimension(500, 400));
+        
+        buildLevelInitiateDesc = Level2.buildLevelInitiateDescription();
+        
+        startLevel2 = new JButton("Start Level 2");
+        startLevel2.addActionListener(this);
+        
+        initL2Panel.add(buildLevelInitiateDesc, BorderLayout.NORTH);
+        initL2Panel.add(startLevel2, BorderLayout.SOUTH);
+        
+        parentPanel.add(initL2Panel);
+        parentPanel.revalidate();
+        parentPanel.repaint();
+        pack();
+        
+        
+        
+    }
+    
+    //added: J.D.
+    public void buildLevel2(){
+        
+        nextL2 = new JButton("~ END GAME ~");
+        nextL2.addActionListener(this);
+        
+        parentPanel.remove(initL2Panel);
+        
+        buildL2Panel = new JPanel();
+        buildL2Panel.setPreferredSize(new Dimension(500, 400)); 
+        buildL2Panel.add(Level2.startLevel());
+        
+        buildL2Panel.add(nextL2);
+        
+        parentPanel.add(buildL2Panel);
+        parentPanel.revalidate();
+        parentPanel.repaint();
+        pack();
+    }
+    
 }
 

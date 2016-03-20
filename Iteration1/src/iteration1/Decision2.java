@@ -15,6 +15,7 @@ import javax.swing.*;
  * @author Maxwell Kosabutski
  */
 public class Decision2 extends JPanel implements ActionListener{
+    
     protected JButton choice1, choice2, choice3, choice4;
     protected JLabel levelImg;
 
@@ -75,6 +76,9 @@ public class Decision2 extends JPanel implements ActionListener{
     }
      
     public JButton buttonFourClicked(){
+     Level2 two = new Level2();
+     JOptionPane.showMessageDialog(null, two.getD4()); 
+     this.setBackground(Color.green);
      return choice4;
     }
     

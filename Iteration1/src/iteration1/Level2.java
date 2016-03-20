@@ -23,14 +23,10 @@ import javax.swing.JTextArea;
  *
  * @author jakedotts
  */
-public class Level2 extends JPanel implements ActionListener{
+public class Level2 extends JPanel{
     
-    
-    private int levelTraverse;
-    JButton startLevel;
     JTextArea levelDescription;
-    Container initiateLevelPane;
-    GameUI newUI;
+
     private static final String theSituation = "Congratulations on making it out of Level 1, now you are"
         + "being faced with a new scenario: "
         + "Your sitting quitely in your cabin reading a book by the window,"
@@ -41,23 +37,12 @@ public class Level2 extends JPanel implements ActionListener{
     public Level2(){
         
     }
-   
-    public void actionPerformed(ActionEvent e){
-        Object click = e.getSource();
-        if (click.equals(startLevel)){
-             newUI.startLevel2();
-        }
-    }
-    public void initiateLevel(){
-        
-        this.setLayout(new BorderLayout());
-        
-        newUI = new GameUI();
-        newUI.frame.getContentPane().removeAll();
-        initiateLevelPane = newUI.frame.getContentPane();
+
+    
+    public JScrollPane buildLevelInitiateDescription(){
         
         levelDescription = new JTextArea(5, 20);
-        levelDescription.setText(Level2.getLevelDescription());
+        levelDescription.setText(getLevelDescription());
         JScrollPane scrollPane = new JScrollPane(levelDescription); 
         levelDescription.setEditable(false);
         levelDescription.setLineWrap(true);
@@ -65,13 +50,15 @@ public class Level2 extends JPanel implements ActionListener{
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setPreferredSize(new Dimension(100, 100));
         
-        startLevel = new JButton("Start Level 2");
-        startLevel.addActionListener(this);
+        return scrollPane;
+    }
+
+    public Decision2 startLevel(){
         
-        initiateLevelPane.add(levelDescription, BorderLayout.NORTH);
-        initiateLevelPane.add(startLevel, BorderLayout.SOUTH);
+        Decision2 buttonPanel = new Decision2(getButton1(),getButton2(),getButton3(),getButton4());
         
         
+        return buttonPanel;
     }
     public static String getLevelDescription(){
 

@@ -16,12 +16,13 @@ import javax.swing.*;
  */
 public class Decision1 extends JPanel implements ActionListener{
     
-    protected JButton choice1, choice2, choice3, choice4, rightChoice;
-    protected JLabel levelImg;
+    JButton choice1, choice2, choice3, choice4, rightChoice;
+    JLabel levelImg;
+    boolean isClicked = false;
+    
 
     
     public Decision1(){
-        
     }
 
     public Decision1(String one, String two, String three, String four)
@@ -43,10 +44,13 @@ public class Decision1 extends JPanel implements ActionListener{
         choice4 = new JButton(four);
         this.add(choice4, BorderLayout.SOUTH);
         
-           choice1.addActionListener(this);
-           choice2.addActionListener(this);
-           choice3.addActionListener(this);
-           choice4.addActionListener(this);
+        choice1.addActionListener(this);
+        choice2.addActionListener(this);
+        choice3.addActionListener(this);
+        choice4.addActionListener(this);
+           
+           
+           
        
     }
     
@@ -64,6 +68,9 @@ public class Decision1 extends JPanel implements ActionListener{
   }
  
   public JButton buttonTwoClicked(){
+     Level1 one = new Level1();
+     JOptionPane.showMessageDialog(null, one.getD2()); 
+     this.setBackground(Color.green);
     return choice2;
   }
   
@@ -87,6 +94,7 @@ public void buttonRemover(JButton toRemove){
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+        //newGameUI = new GameUI();
         rightChoice = new JButton();
         Object o = ae.getSource();
         
@@ -96,9 +104,7 @@ public void buttonRemover(JButton toRemove){
       
         }else if(o.equals(choice2)){
             
-            this.setVisible(false);
-            Level2 initLevel = new Level2();
-            initLevel.initiateLevel();
+        buttonTwoClicked().addActionListener(this);
         
         
         }else if(o.equals(choice3)){

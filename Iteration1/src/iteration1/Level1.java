@@ -26,41 +26,25 @@ import javax.swing.Timer;
  *
  * @author jakedotts
  */
-public class Level1 extends JPanel implements ActionListener{
+public class Level1 extends JPanel{
     
       
-    JButton levelImg;
-    JButton startLevel;
     JTextArea levelDescription;
-    GameUI newUI;
-    Container initiateLevelPane;
-    private final static String theSituation = "It is late at night, you are laying in bed. You then hear "
+    String theSituation = "It is late at night, you are laying in bed. You then hear "
                 + "a knock on the door and start to wonder who is visiting so late. "
                 + "You then hear the door slam open and footsteps running up the staircase."
-                + "All of a sudden a zombie busts through your bedroom door. What do you do?";    
+                + "All of a sudden a zombie busts through your bedroom door. What do you do?";  
+    
     
     public Level1(){
         
     }
     
-    public void actionPerformed(ActionEvent e){
-
-        Object click = e.getSource();
-        if (click.equals(startLevel)){
-            newUI.frame.setVisible(false);
-            newUI.startLevel1();
-        }
-    }
-    public void initiateLevel(){
-        
-        this.setLayout(new BorderLayout());
-        
-        newUI = new GameUI();
-        newUI.frame.getContentPane().removeAll();
-        initiateLevelPane = newUI.frame.getContentPane();
+    
+    public JScrollPane buildLevelInitiateDescription(){
         
         levelDescription = new JTextArea(5, 20);
-        levelDescription.setText(Level1.getLevelDescription());
+        levelDescription.setText(getLevelDescription());
         JScrollPane scrollPane = new JScrollPane(levelDescription); 
         levelDescription.setEditable(false);
         levelDescription.setLineWrap(true);
@@ -68,17 +52,23 @@ public class Level1 extends JPanel implements ActionListener{
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setPreferredSize(new Dimension(100, 100));
         
-        startLevel = new JButton("Start Level 1");
-        startLevel.addActionListener(this);
-        
-        initiateLevelPane.add(levelDescription, BorderLayout.NORTH);
-        initiateLevelPane.add(startLevel, BorderLayout.SOUTH);
-        
-        
+        return scrollPane;
     }
     
     
-    public static String getLevelDescription(){
+    
+    //moved this method previously the startLevel1 method from the GameUI class
+    //to here as the startLevel() method 
+    //refactor by Jake Dotts
+    public Decision1 startLevel(){
+        
+        Decision1 buttonPanel = new Decision1(getButton1(),getButton2(),getButton3(),getButton4());
+
+        return buttonPanel;
+    }
+    
+    
+    public String getLevelDescription(){
 
         return theSituation;
     }
@@ -92,7 +82,8 @@ public class Level1 extends JPanel implements ActionListener{
     }
     public String getD2(){
         String newDecision2 = "The zombie gracefully accepts your "
-                + "teddy bear and exits through the window";
+                + "teddy bear and exits through the window, you have made it out of"
+                + "level one, now move on to the next level";
         
         return newDecision2;
     }
