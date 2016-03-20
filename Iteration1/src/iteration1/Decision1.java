@@ -54,20 +54,7 @@ public class Decision1 extends JPanel implements ActionListener{
 
         choice4 = new JButton(four);
         this.add(choice4, BorderLayout.SOUTH);
-//<<<<<<< HEAD
-        
-        choice1.addActionListener(this);
-        choice2.addActionListener(this);
-        choice3.addActionListener(this);
         choice4.addActionListener(this);
-           
-           
-           
-//=======
-        //choice4.addActionListener(this);
-
-         
-//>>>>>>> origin/master
        
     }
     
@@ -108,8 +95,7 @@ public void buttonRemover(JButton toRemove){
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        //newGameUI = new GameUI();
-        rightChoice = new JButton();
+        
         Object o = ae.getSource();
         
         if (o.equals(choice1)) {
@@ -120,8 +106,9 @@ public void buttonRemover(JButton toRemove){
         }else if(o.equals(choice2)){
             
 
-        buttonTwoClicked().addActionListener(this);
-        //this.setVisible(false);
+        JButton toRemove = buttonTwoClicked();
+        buttonRemover(toRemove);
+        repaint();
         
         
         }else if(o.equals(choice3)){
