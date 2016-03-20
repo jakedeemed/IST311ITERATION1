@@ -26,6 +26,9 @@ import javax.swing.Timer;
  *
  * @author jakedotts
  */
+
+//declare the Strings on the JButtons in the constructor rather than the methods  
+//Refactored by: Vincent Maimone
 public class Level1 extends JPanel{
     
       
@@ -33,10 +36,15 @@ public class Level1 extends JPanel{
     String theSituation = "It is late at night, you are laying in bed. You then hear "
                 + "a knock on the door and start to wonder who is visiting so late. "
                 + "You then hear the door slam open and footsteps running up the staircase."
-                + "All of a sudden a zombie busts through your bedroom door. What do you do?";  
+                + "All of a sudden a zombie busts through your bedroom door. What do you do?";
+    String button1 = "Umbrella";
+    String button2 = "Teddy Bear";
+    String button3 = "Window";
+    String button4 = "Fight";
     
     
-    public Level1(){
+    public Level1()
+    {
         
     }
     
@@ -101,16 +109,16 @@ public class Level1 extends JPanel{
     }
     
     public String getButton1(){
-        return "Umbrella";
+        return button1;
     }
     public String getButton2(){
-        return "Teddy Bear";
+        return button2;
     }    
     public String getButton3(){
-        return "Window";
+        return button3;
     }
     public String getButton4(){
-        return "Fight";
+        return button4;
     }    
 
 }
