@@ -42,13 +42,7 @@ public class Level2Test {
     /**
      * Test of initiateLevel method, of class Level2.
      */
-    @Test
-    public void testInitiateLevel() {
-        System.out.println("initiateLevel");
-        Level2 instance = new Level2();
-        instance.initiateLevel();
-        // TODO review the generated test code and remove the default call to fail.
-    }
+   
 
     /**
      * Test of getLevelDescription method, of class Level2.

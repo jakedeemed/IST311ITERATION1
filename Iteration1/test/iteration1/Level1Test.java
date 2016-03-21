@@ -42,13 +42,7 @@ public class Level1Test {
     /**
      * Test of initiateLevel method, of class Level1.
      */
-    @Test
-    public void testInitiateLevel() {
-        System.out.println("initiateLevel");
-        Level1 instance = new Level1();
-        instance.initiateLevel();
-        // TODO review the generated test code and remove the default call to fail.
-    }
+   
 
     /**
      * Test of getLevelDescription method, of class Level1.
@@ -56,11 +50,12 @@ public class Level1Test {
     @Test
     public void testGetLevelDescription() {
         System.out.println("getLevelDescription");
+        Level1 instance = new Level1();
         String expResult = "It is late at night, you are laying in bed. You then hear "
                 + "a knock on the door and start to wonder who is visiting so late. "
                 + "You then hear the door slam open and footsteps running up the staircase."
                 + "All of a sudden a zombie busts through your bedroom door. What do you do?";
-        String result = Level1.getLevelDescription();
+        String result = instance.getLevelDescription();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
@@ -89,7 +84,8 @@ public class Level1Test {
         System.out.println("getD2");
         Level1 instance = new Level1();
         String expResult = "The zombie gracefully accepts your "
-                + "teddy bear and exits through the window";
+                + "teddy bear and exits through the window, you have made it out of"
+                + "level one, now move on to the next level";
         String result = instance.getD2();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
